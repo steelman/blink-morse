@@ -1,0 +1,29 @@
+[package]
+name = "blink-morse"
+version = "0.1.0"
+edition = "2021"
+authors = ["Łukasz Stelmach <lksz@stlmch.eu>"]
+publish = false
+
+[dependencies]
+panic-halt = "0.2.0"
+
+[dependencies.attiny-hal]
+git = "https://github.com/Rahix/avr-hal"
+rev = "8e4ba8f2a097b28459e35528e9f3d89dcf2a6c39"
+
+[features]
+default = ["attiny85"]
+attiny85 = ["attiny-hal/attiny85", "attiny-hal/rt"] 
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"
+
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"

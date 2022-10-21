@@ -1,0 +1,11 @@
+#+TITLE: Blink some Morse
+
+This is a yet another very basic blinking program. It uses attiny-hal
+from [[https://github.com/Rahix/avr-hal/][avr-hal]] to blink an LED attached to the 2nd pin of ATtiny85. The
+purpose of this repository is to demonstrate the most basic setup for
+a program written in Rust for an ATtiny85 µC. Just run =cargo build=
+and you will find =target/avr-attiny85/debug/blink-morse.elf= ready to
+be uploaded with [[https://github.com/avrdudes/avrdude][avrdude(1)]].
+
+Building for different AVR microcontrolers is left as an excersise to
+the reader.
